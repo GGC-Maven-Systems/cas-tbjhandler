@@ -49,8 +49,7 @@ import org.guanzon.cas.tbjhandler.Services.TBJModels;
 import org.guanzon.cas.tbjhandler.constant.TBJ_Constant;
 import org.guanzon.cas.tbjhandler.validator.TBJValidator;
 import org.json.simple.JSONObject;
-import ph.com.guanzongroup.cas.cashflow.AccountChart;
-import ph.com.guanzongroup.cas.cashflow.services.CashflowControllers;
+import org.guanzon.cas.parameter.AccountChart;
 
 /**
  * TBJParameter ------------------------------------------------------------
@@ -721,7 +720,7 @@ public class TBJParameter extends Transaction {
     public JSONObject SearchAccountChart(String value, boolean byCode, int detailRow)
             throws ExceptionInInitializerError, SQLException, GuanzonException {
 
-        AccountChart object = new CashflowControllers(poGRider, logwrapr).AccountChart();
+        AccountChart object = new ParamControllers(poGRider, logwrapr).AccountChart();
         object.setRecordStatus("1");
 
         poJSON = object.searchRecord(value, byCode, Master().getIndustryID());

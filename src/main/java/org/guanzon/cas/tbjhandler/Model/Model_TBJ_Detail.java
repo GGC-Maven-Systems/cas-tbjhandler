@@ -10,8 +10,7 @@ import org.guanzon.cas.parameter.model.Model_xxxTransactionSourceTable;
 import org.guanzon.cas.parameter.services.ParamModels;
 import org.guanzon.cas.tbjhandler.Services.TBJModels;
 import org.json.simple.JSONObject;
-import ph.com.guanzongroup.cas.cashflow.model.Model_Account_Chart;
-import ph.com.guanzongroup.cas.cashflow.services.CashflowModels;
+import org.guanzon.cas.parameter.model.Model_Account_Chart;
 
 /**
  * Model_TBJ_Detail --------------------------------------------------------
@@ -64,9 +63,8 @@ public class Model_TBJ_Detail extends Model {
             ID2 = "nEntryNox"; // Primary key 2
 
             // Initialize reference objects
-            CashflowModels cashFlow = new CashflowModels(poGRider);
-            poAccountChart = cashFlow.Account_Chart();
             ParamModels paramModels = new ParamModels(poGRider);
+            poAccountChart = paramModels.AccountChart();
             poTransactionSourceTable = paramModels.TransactionSourceTable();
 
             TBJModels tbj = new TBJModels(poGRider);
